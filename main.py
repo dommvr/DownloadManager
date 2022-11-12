@@ -8,7 +8,6 @@ import shutil
 class DownloadDirectoryManager:
 
     download_directory = r"C:\Users\Dominik\Downloads"
-    #download_directory = os.getcwd()
     json_file = open('files_info.json')
     files_info = json.load(json_file)
     downloaded_files = []
@@ -29,7 +28,6 @@ class DownloadDirectoryManager:
         return self.downloaded_files
         
     def copy_files(self):
-        ###jesli plik juz istnieje w jakims folderze to zmiana jego nazwy
         for file_path in DDM.list_of_files():
             self.file_extension = os.path.basename(file_path)
             self.file_extension = os.path.splitext(self.file_extension)
